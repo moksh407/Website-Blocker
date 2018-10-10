@@ -1,0 +1,29 @@
+To run the script as a background process.
+
+For windows:
+  1. change the extension of the script from .py to .pyw
+  2. Right click -> Run as administrator.
+
+To schedule it as a task:
+  1. Open Task scheduler.
+  2. Create task.
+  3. Give the name, check "Run with highest privilidges", select the option from "configure for".
+  4. Go to its triggers tab->New->Select "at startup option".
+  5. Click Ok.
+  6. Go to its actions tab->select option "start a program", browse your program location->Ok.
+  7. Go to conditions tab->Uncheck the 1st option under Power->OK.
+  8. Give the absolute path for the host file in the script if not given earlier.
+
+
+
+For Linux/MAC:
+  1. Type the following commands in the terminal.
+
+  #sudo crontab -e
+
+  2. In this file, add these lines at the end.
+
+  @reboot python3.6 /home/Desktop/python/udemy/projects/website_blocker/website_blocker.py
+
+  3. Save and exit.
+  4. The script will automatically run in background when the system reboots.
